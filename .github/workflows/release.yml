@@ -23,6 +23,8 @@ jobs:
       uses: actions/checkout@v4
 
     - name: Verify build workflow passed
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       run: |
         echo "Checking if build workflow passed for commit ${{ github.sha }}..."
 
