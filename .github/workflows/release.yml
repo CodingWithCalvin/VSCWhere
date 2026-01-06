@@ -69,7 +69,7 @@ jobs:
     - name: Update version in Cargo.toml
       run: |
         $version = "${{ github.event.inputs.version }}"
-        (Get-Content Cargo.toml) -replace 'version = ".*"', "version = `"$version`"" | Set-Content Cargo.toml
+        (Get-Content Cargo.toml) -replace '^version = ".*"', "version = `"$version`"" | Set-Content Cargo.toml
         Write-Host "Updated Cargo.toml to version $version"
       shell: pwsh
 
