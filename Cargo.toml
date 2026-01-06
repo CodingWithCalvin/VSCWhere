@@ -1,0 +1,21 @@
+[package]
+name = "vscwhere"
+version = "0.1.0"
+edition = "2024"
+description = "Locate Visual Studio Code installations on Windows"
+license = "MIT"
+repository = "https://github.com/CodingWithCalvin/VSCWhere"
+
+[dependencies]
+serde = { version = "1", features = ["derive"] }
+serde_json = "1"
+
+[target.'cfg(windows)'.dependencies]
+winreg = "0.55"
+
+[profile.release]
+opt-level = "z"     # Optimize for size
+lto = true          # Link-time optimization
+codegen-units = 1   # Single codegen unit for better optimization
+panic = "abort"     # Abort on panic (smaller binary)
+strip = true        # Strip symbols
