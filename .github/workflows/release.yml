@@ -158,7 +158,6 @@ jobs:
         A CLI tool to locate #VisualStudioCode installations on #Windows - like vswhere for VS Code.
 
         https://github.com/${{ github.repository }}/releases/tag/v${{ github.event.inputs.version }}
-      embed_url: https://github.com/${{ github.repository }}/releases/tag/v${{ github.event.inputs.version }}
       embed_title: VSCWhere v${{ github.event.inputs.version }}
       embed_description: A CLI tool to locate Visual Studio Code installations on Windows
     secrets:
@@ -176,7 +175,6 @@ jobs:
         A CLI tool to locate #VisualStudioCode installations on #Windows - like vswhere for VS Code.
 
         https://github.com/${{ github.repository }}/releases/tag/v${{ github.event.inputs.version }}
-      article_url: https://github.com/${{ github.repository }}/releases/tag/v${{ github.event.inputs.version }}
       article_title: VSCWhere v${{ github.event.inputs.version }}
       article_description: A CLI tool to locate Visual Studio Code installations on Windows
     secrets:
