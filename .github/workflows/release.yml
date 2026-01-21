@@ -164,3 +164,20 @@ jobs:
       BLUESKY_USERNAME: ${{ secrets.BLUESKY_USERNAME }}
       BLUESKY_APP_PASSWORD: ${{ secrets.BLUESKY_APP_PASSWORD }}
 
+  notify-x:
+    name: Post to X
+    needs: release
+    uses: CodingWithCalvin/.github/.github/workflows/x-post.yml@main
+    with:
+      post_text: |
+        🚀 VSCWhere v${{ github.event.inputs.version }} is now available!
+
+        A CLI tool to locate #VisualStudioCode installations on #Windows - like vswhere for VS Code.
+
+        https://github.com/${{ github.repository }}/releases/tag/v${{ github.event.inputs.version }}
+    secrets:
+      X_CONSUMER_KEY: ${{ secrets.X_CONSUMER_KEY }}
+      X_CONSUMER_KEY_SECRET: ${{ secrets.X_CONSUMER_KEY_SECRET }}
+      X_ACCESS_TOKEN: ${{ secrets.X_ACCESS_TOKEN }}
+      X_ACCESS_TOKEN_SECRET: ${{ secrets.X_ACCESS_TOKEN_SECRET }}
+
